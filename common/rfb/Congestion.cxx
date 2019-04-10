@@ -70,7 +70,7 @@ static const unsigned MAXIMUM_WINDOW = 4194304;
 
 // Compare position even when wrapped around
 static inline bool isAfter(unsigned a, unsigned b) {
-  return (int)a - (int)b > 0;
+  return a - b > 0 && a - b <= INT_MAX;
 }
 
 static LogWriter vlog("Congestion");
